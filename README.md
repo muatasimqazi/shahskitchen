@@ -2,7 +2,7 @@
 
 Static website for Shah’s Kitchen, an Afghan restaurant. Plain HTML + one CSS file, no build step, hosted on GitHub Pages.
 
-Live: https://muatasimqazi.github.io/shahskitchen/
+Live: https://shahskitchen.com/
 
 ## Pages
 
@@ -32,6 +32,20 @@ Push to `main`, then in the repo go to Settings → Pages → Source: "Deploy fr
 ```sh
 gh api -X POST repos/muatasimqazi/shahskitchen/pages -f 'source[branch]=main' -f 'source[path]=/'
 ```
+
+## Custom domain (shahskitchen.com)
+
+`CNAME` in the repo root tells GitHub Pages the domain. DNS is at GoDaddy; set these records there:
+
+| Type | Name | Value |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | muatasimqazi.github.io |
+
+Delete any existing A records on `@` (GoDaddy parking) first. Then in Settings → Pages, confirm the custom domain shows `shahskitchen.com` and tick "Enforce HTTPS" once the certificate is issued (can take up to an hour after DNS propagates).
 
 ## Before going live
 
