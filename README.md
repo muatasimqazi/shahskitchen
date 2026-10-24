@@ -15,7 +15,7 @@ Live: https://shahskitchen.com/
 | `visit.html` | Address, hours, phone, directions |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
-`styles.css` holds all styling. `assets/` holds the paper texture, the geometric pattern and the favicon. `docs/PRD.com` is the original brief.
+`styles.css` holds all styling. `assets/` holds the logo, favicons, paper texture and geometric pattern. `assets/images/` holds web-optimized photos (max 1400px, ~150 KB each); the untouched originals live in `assets/images/originals/`, which is gitignored. `docs/PRD.com` is the original brief.
 
 ## Run locally
 
@@ -49,14 +49,10 @@ Delete any existing A records on `@` (GoDaddy parking) first. Then in Settings â
 
 ## Before going live
 
-Search the HTML for `[` placeholders and `tel:` and fill in:
+Still placeholders (search the HTML for `[`):
 
-- Street address, city, state, ZIP (`visit.html` and the Visit band on every page)
-- Phone number in every `href="tel:"` (sticky bar, Call Us buttons, Visit band)
-- Hours
 - Parking, accessibility and email on `visit.html`
 - Owner story on `about.html`
-- Real photos: replace each `<figure class="ph â€¦">` placeholder with an `<img>` inside it
 - Online ordering link, if one exists (deliberately omitted until then)
 
-Prices live in the HTML of `menu.html` and `index.html`. Edit the number inside `<span class="price">`.
+Business details (address, phones, hours) live in the Visit band on every page and in the JSON-LD on `index.html`. Prices live in `menu.html` and `index.html`; edit the number inside `<span class="price">`.
